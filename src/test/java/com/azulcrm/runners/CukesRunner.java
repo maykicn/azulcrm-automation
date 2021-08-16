@@ -13,8 +13,8 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "com/azulcrm/stepdefinitions",
-        tags = "@wip",
-        dryRun = false
+        tags = "@EUG18-288",
+        dryRun =false
 )
 public class CukesRunner {
 }

@@ -6,11 +6,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+import java.util.concurrent.TimeUnit;
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.get(),this);
-    }
+public class LoginPage extends BasePage {
+
 
     @FindBy(xpath = "//input[@name='USER_LOGIN']")
     public WebElement usernameBox;
@@ -20,6 +19,7 @@ public class LoginPage {
     public WebElement loginBtn;
 
     public void login(){
+
         usernameBox.sendKeys(ConfigurationReader.get("username"));
         passwordBox.sendKeys(ConfigurationReader.get("password"));
         loginBtn.click();
