@@ -1,4 +1,4 @@
-@wip
+
 Feature:  As a user, I should be able to create a poll by clicking on Poll tab under Active Stream
 
   Background:
@@ -13,8 +13,9 @@ Feature:  As a user, I should be able to create a poll by clicking on Poll tab u
 
   Scenario:Attach a link by clicking on the link icon.
     And Click "link"
-    And Enter "text for" link text  and "url" for url text
-    Then User should be able to attach "url" link
+    And Enter "text for facebook" link text  and "https://www.facebook.com/" for url text
+    And Click "send"
+    Then User should be able to attach "https://www.facebook.com/" link
 
 
   Scenario: Add mention by clicking on the add mention icon.

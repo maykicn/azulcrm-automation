@@ -69,12 +69,17 @@ public class creatingPollStepDefs {
 
     @Then("User should be able to attach {string} link")
     public void user_should_be_able_to_attach_link(String url) {
-        Driver.get().switchTo().frame(activityStream.iframe);
-        BrowserUtils.waitFor(1);
-        activityStream.linktextInBox.click();
-        Assert.assertEquals(url, Driver.get().getCurrentUrl());
-        Driver.get().switchTo().parentFrame();
-
+        try {
+            activityStream.addedLink.click();
+        }catch (org.openqa.selenium.StaleElementReferenceException e){
+            activityStream.addedLink.click();
+        }
+        for (String winHandle : Driver.get().getWindowHandles()) {
+            Driver.get().switchTo().window(winHandle);
+        }
+        String actualUrl= Driver.get().getCurrentUrl();
+        String expectedUrl=url;
+        Assert.assertEquals(expectedUrl,actualUrl);
     }
 
     @Then("User should be able to {int} add mention by clicking on the add mention icon")

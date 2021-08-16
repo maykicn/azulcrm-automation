@@ -35,8 +35,8 @@ public class ActivityStream extends BasePage {
     @FindBy(xpath = "//iframe[@class='bx-editor-iframe']")
     public WebElement iframe;
 
-    @FindBy(xpath = "//body/a")
-    public WebElement linktextInBox;
+    @FindBy(xpath = "//div[starts-with(@id,'blog_post_body_')]/a")
+    public WebElement addedLink;
 
     @FindBy(xpath = "//span[@id='bx-b-mention-blogPostForm']")
     public WebElement addMention;
