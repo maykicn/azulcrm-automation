@@ -14,7 +14,6 @@ import java.util.concurrent.TimeUnit;
 public class Hooks {
     @Before
     public void setUp(){
-        System.out.println("\tthis is coming from BEFORE");
         Driver.get().get(ConfigurationReader.get("url"));
         Driver.get().manage().window().maximize();
         Driver.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -26,7 +25,6 @@ public class Hooks {
             scenario.attach(screenShot,"image/png", scenario.getName()+"_screenshot");
 
         }
-
         BrowserUtils.waitFor(3);
         Driver.closeDriver();
     }

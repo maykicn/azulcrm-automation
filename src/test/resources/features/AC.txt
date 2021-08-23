@@ -8,7 +8,7 @@ Acceptance Criteria
     User should be able to add questions and multiple answers.
     User should be able to delete questions and multiple answers.
     User should be able to provide multiple choice to attendees by selecting the Allow multiple choice checkbox.
-    User should be able to send a poll
+
 
 
 

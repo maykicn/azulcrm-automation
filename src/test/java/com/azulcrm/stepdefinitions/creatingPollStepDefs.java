@@ -68,7 +68,7 @@ public class creatingPollStepDefs {
     }
 
     @Then("User should be able to attach {string} link")
-    public void user_should_be_able_to_attach_link(String url) {
+    public void user_should_be_able_to_attach_link(String expectedUrl) {
         try {
             activityStream.addedLink.click();
         }catch (org.openqa.selenium.StaleElementReferenceException e){
@@ -78,12 +78,11 @@ public class creatingPollStepDefs {
             Driver.get().switchTo().window(winHandle);
         }
         String actualUrl= Driver.get().getCurrentUrl();
-        String expectedUrl=url;
         Assert.assertEquals(expectedUrl,actualUrl);
     }
 
     @Then("User should be able to {int} add mention by clicking on the add mention icon")
-    public void user_should_be_able_to_add_mention_by_clicking_on_the_add_mention_icon(Integer int1) {
+    public void user_should_be_able_to_add_mention_by_clicking_on_the_add_mention_icon(int int1) {
         activityStream.employmeesAndDepartmentsMention.click();
         String pathAdd="(//div[@class='bx-finder-company-department-employee-name'])["+int1+"]";
         BrowserUtils.waitFor(1);
@@ -108,7 +107,7 @@ public class creatingPollStepDefs {
     @When("Add questions and answers")
     public void add_questions_and_answers(Map<String,List<String>>questionsAnswers) {
         int numberOfQuestion=0;
-        Set<String> keySetOfMap=questionsAnswers.keySet();
+        //Set<String> keySetOfMap=questionsAnswers.keySet();
 
         for (String question: questionsAnswers.keySet()) {
             activityStream.addQuestions(numberOfQuestion,question);
@@ -186,15 +185,6 @@ public class creatingPollStepDefs {
         }
 
 
-
-
-
-
-
     }
-
-
-
-
 
 }
