@@ -9,7 +9,7 @@ public class Sln {
         System.out.println("selen olmasin bence");
         System.out.println("bilal demistim");
         System.out.println("bilalde israr ediyorum");
-        System.out.println("Aykut");
+        System.out.println("Aykut Can");
       
 
 
