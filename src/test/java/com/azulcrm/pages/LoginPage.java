@@ -25,5 +25,8 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
 
+    // rejep commit
+
+
 
 }
